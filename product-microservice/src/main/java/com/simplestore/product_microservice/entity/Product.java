@@ -1,13 +1,16 @@
-import javax.persistence.*;
+package com.simplestore.product_microservice.entity;
+
+import jakarta.persistence.*;
 
 @Entity
 public class Product{
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private int amount;
     private String name;
     private float price;
-    public Product()
+    public Product() {}
     public Product(int amount, String name, float price){
         this.amount=amount;
         this.name=name;
